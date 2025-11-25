@@ -1,30 +1,22 @@
 export interface Product {
   id: string;
-  title: string;
-  imageUrl: string;
-  price: number;
-  purchaseCount?: string; // e.g., "2k+"
-  isAd: boolean;
-  delivery: {
-    isFree: boolean;
-    arrivalDate: string; // e.g., "Tomorrow (Wed) arrival"
-    isGuaranteed: boolean; // "Arrival Guarantee"
-    todayArrival?: boolean;
-  };
-  benefits: {
-    membershipFreeReturn: boolean;
-    points?: number;
-    gift?: string; // e.g. "Ribbon doll 8pcs..."
-  };
-  categories: string[];
-  rating: {
-    score: number;
-    count: number; // e.g. 1750
-  };
-  seller: {
-    name: string;
-    badges: string[]; // e.g. "Big Power", "Good Service"
-  };
-  zzimCount: number; // "Like" count
-  regDate?: string;
+  name: string;
+  description: string;
+  originalPrice: number;
+  discountedPrice: number;
+  discountPercentage: number;
+  reviewCount: number;
+  rating: number;
+  imageKeyword: string;
+  imagePath: string;
+}
+
+export enum PricingDisplayMode {
+  DISCOUNT_EMPHASIS = 'DISCOUNT_EMPHASIS',
+  PRICE_EMPHASIS = 'PRICE_EMPHASIS',
+}
+
+export enum ProductRange {
+  RANGE_1_50 = 'RANGE_1_50',
+  RANGE_51_100 = 'RANGE_51_100',
 }
